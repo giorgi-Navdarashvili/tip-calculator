@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components'
+import { Logo } from './components/Logo';
+import { TipCalculator } from './components/TipCalculator';
 
-function App() {
+const Container = styled.section`
+  background-color: #C5E4E7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  @media only screen and (min-width: 1440px) {
+    justify-content: center;
+  }
+`;
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Container>
+      <Logo />
+      <TipCalculator />
+    </Container>
+  )
 }
-
-export default App;
